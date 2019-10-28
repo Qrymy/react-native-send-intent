@@ -703,6 +703,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         Uri uri = Uri.parse(dataUri);
         Intent sendIntent = new Intent("com.instagram.share.ADD_TO_STORY");
         sendIntent.setDataAndType(uri, "MEDIA_TYPE_JPEG");
+        sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         sendIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
         this.reactContext.startActivity(sendIntent);
